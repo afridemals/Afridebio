@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="U5XqgWW2ed7ZRilRoKENLXpq53rHLHbJMb7q_ze_XoI" />
+
+<title>Afride Mals | Personal Portfolio</title>
+
+<meta name="description" content="Official portfolio website of Afride Mals. Science student and aspiring Software Engineer.">
+<meta name="keywords" content="Afride Mals, Portfolio, Web Developer, Bangladesh">
+<meta name="author" content="Afride Mals">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --blue:#3a86ff;
+  --orange:#ff9f1c;
+  --text:#1e293b;
+  --muted:#475569;
+  --glass:rgba(255,255,255,.75);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(120deg,#e0f2ff,#fff7ed);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* BACKGROUND BLUR SHAPES */
+.bg{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+}
+.shape{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(60px);
+  opacity:.55;
+  animation:float 18s infinite alternate ease-in-out;
+}
+.s1{width:420px;height:420px;background:var(--blue);top:-15%;left:-15%}
+.s2{width:380px;height:380px;background:var(--orange);bottom:-15%;right:-15%;animation-delay:-6s}
+
+@keyframes float{
+  from{transform:translate(0,0)}
+  to{transform:translate(60px,40px)}
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.badge{
+  background:var(--glass);
+  padding:8px 20px;
+  border-radius:20px;
+  font-size:.7rem;
+  letter-spacing:2px;
+  margin-bottom:18px;
+}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:4rem;
+  background:linear-gradient(45deg,var(--blue),var(--orange));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  margin-top:14px;
+  font-size:.95rem;
+  color:var(--muted);
+}
+
+/* SECTION */
+.section{
+  max-width:1000px;
+  margin:auto;
+  padding:90px 20px;
+}
+
+.title{
+  text-align:center;
+  font-size:2.3rem;
+  margin-bottom:45px;
+}
+.title span{color:var(--orange)}
+
+/* BIO */
+.bio{
+  background:var(--glass);
+  padding:45px;
+  border-radius:30px;
+  line-height:1.9;
+  color:var(--muted);
+  box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+/* INFO */
+.info{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:22px;
+}
+.box{
+  background:var(--glass);
+  padding:28px;
+  border-radius:22px;
+  text-align:center;
+  box-shadow:0 15px 30px rgba(0,0,0,.06);
+}
+.box i{
+  font-size:26px;
+  color:var(--blue);
+  margin-bottom:12px;
+}
+
+/* CONTACT */
+.contact{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  justify-content:center;
+}
+.contact a{
+  text-decoration:none;
+  padding:12px 22px;
+  border-radius:30px;
+  background:var(--glass);
+  color:var(--text);
+  display:flex;
+  gap:10px;
+  align-items:center;
+  box-shadow:0 10px 25px rgba(0,0,0,.07);
+  transition:.3s;
+}
+.contact a:hover{
+  transform:translateY(-4px);
+  background:linear-gradient(45deg,var(--blue),var(--orange));
+  color:white;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px 20px;
+  font-size:.85rem;
+  color:#64748b;
+}
+
+/* ===== POLISHED SCROLL ANIMATION ===== */
+.reveal{
+  opacity:0;
+  transform:translateY(60px) scale(.97);
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:none;
+}
+
+.delay-1{transition-delay:.1s}
+.delay-2{transition-delay:.25s}
+.delay-3{transition-delay:.4s}
+
+@media(max-width:768px){
+  .hero h1{font-size:2.7rem}
+}
+</style>
+</head>
+
+<body>
+
+<!-- PORTFOLIO ARROW - একদম উপরে, <body> tag এর পরেই বসাও -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+.arrow-link-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0px;
+  text-decoration:none;
+  cursor:pointer;
+  width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:999;
+  padding:6px 0 4px 0;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+}
+
+.arrow-top-text{
+  font-family:'Poppins',sans-serif;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  background:linear-gradient(90deg,#3a86ff,#ff9f1c);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  opacity:0;
+  animation:arrowLabelIn 1s ease .3s forwards;
+  margin-bottom:5px;
+}
+
+@keyframes arrowLabelIn{
+  from{opacity:0;transform:translateY(-8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.arrow-bar{
+  display:flex;
+  align-items:stretch;
+  width:96%;
+  height:30px;
+  position:relative;
+}
+
+.seg{
+  flex:1;
+  height:100%;
+  clip-path:polygon(0 0,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,0 100%,10px 50%);
+  animation:segIn .5s ease both;
+  transition:filter .3s;
+}
+.seg:first-child{
+  clip-path:polygon(0 0,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,0 100%);
+  border-radius:5px 0 0 5px;
+}
+.seg:last-child{
+  clip-path:polygon(0 0,calc(100% - 4px) 0,calc(100% + 10px) 50%,calc(100% - 4px) 100%,0 100%,10px 50%);
+}
+
+.seg:nth-child(1){background:#3a86ff;animation-delay:.05s}
+.seg:nth-child(2){background:#5096ff;animation-delay:.10s}
+.seg:nth-child(3){background:#6daaff;animation-delay:.15s}
+.seg:nth-child(4){background:#a8c8e8;animation-delay:.20s}
+.seg:nth-child(5){background:#d4a860;animation-delay:.25s}
+.seg:nth-child(6){background:#f09030;animation-delay:.30s}
+.seg:nth-child(7){background:#ff9f1c;animation-delay:.35s}
+
+@keyframes segIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+.arrow-link-wrap:hover .seg{filter:brightness(1.2)}
+
+.travel-dot{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:7px;height:7px;
+  background:#fff;
+  border-radius:50%;
+  box-shadow:0 0 10px 3px rgba(255,255,255,.8);
+  pointer-events:none;
+  animation:dotTravel 2s ease-in-out infinite;
+}
+
+@keyframes dotTravel{
+  0%  {left:1%;opacity:0}
+  8%  {opacity:1}
+  92% {opacity:1}
+  100%{left:95%;opacity:0}
+}
+
+.arrow-shimmer{
+  width:96%;
+  height:1.5px;
+  background:linear-gradient(90deg,transparent,#3a86ff 30%,#ff9f1c 70%,transparent);
+  animation:shimmerPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes shimmerPulse{
+  0%,100%{opacity:.3}
+  50%{opacity:.7}
+}
+</style>
+
+<a href="https://afridemals.github.io/AfrideBiography/" target="_blank" rel="noopener" class="arrow-link-wrap">
+  <span class="arrow-top-text">Personal Portfolio 2.0</span>
+  <div class="arrow-bar">
+    <div class="seg"></div>
+    <div class="seg"></div>
+    <div class="seg"></div>
+    <div class="seg"></div>
+    <div class="seg"></div>
+    <div class="seg"></div>
+    <div class="seg"></div>
+    <div class="travel-dot"></div>
+  </div>
+  <div class="arrow-shimmer"></div>
+</a>
+
+<script>
+let lastScroll = 0;
+const arrow = document.querySelector('.arrow-link-wrap');
+
+window.addEventListener('scroll', () => {
+  const current = window.scrollY;
+  
+  if (current > lastScroll && current > 10) {
+    // Scrolling DOWN — hide
+    arrow.style.transform = 'translateY(-110%)';
+    arrow.style.transition = 'transform 0.4s ease';
+  } else {
+    // Scrolling UP — show
+    arrow.style.transform = 'translateY(0)';
+    arrow.style.transition = 'transform 0.4s ease';
+  }
+  
+  lastScroll = current;
+});
+</script>
+
+<div class="bg">
+  <div class="shape s1"></div>
+  <div class="shape s2"></div>
+</div>
+
+<!-- HERO -->
+<section class="hero reveal show">
+  <div class="badge">WELCOME</div>
+  <h1>Afride Mals</h1>
+  <p>Science student & aspiring Software Engineer</p>
+</section>
+
+<!-- ABOUT -->
+<section class="section reveal delay-1">
+  <div class="title">About <span>Me</span></div>
+  <div class="bio">
+    I am a Science student and aspiring Software Engineering professional with a passion for logic,
+    mathematics, and complex problem-solving.  
+    Beyond academics, I apply analytical thinking in leadership roles,
+    confidently handling responsibility and pressure.  
+    Driven by the calm of logic and the energy of innovation,
+    I continuously strive for clarity, growth, and excellence.
+  </div>
+</section>
+
+<!-- FOCUS -->
+<section class="section reveal delay-2">
+  <div class="title">Core <span>Focus</span></div>
+  <div class="info">
+    <div class="box"><i class="fa-solid fa-code"></i><p>Software Engineering</p></div>
+    <div class="box"><i class="fa-solid fa-calculator"></i><p>Logic & Mathematics</p></div>
+    <div class="box"><i class="fa-solid fa-lightbulb"></i><p>Innovation</p></div>
+    <div class="box"><i class="fa-solid fa-camera"></i><p>Photography</p></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section reveal delay-3">
+  <div class="title">Contact <span>Me</span></div>
+  <div class="contact">
+    <a href="mailto:aafride941@gmail.com"><i class="fa-solid fa-envelope"></i> Gmail</a>
+    <a href="https://www.facebook.com/afridemals" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+    <a href="https://www.tiktok.com/@rabida4t9" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+    <a href="https://x.com/Afride7867" target="_blank"><i class="fab fa-x-twitter"></i> Twitter</a>
+    <a href="https://t.me/afride420" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+    <a href="https://wa.me/8801878239149" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a href="https://github.com/AF-R-786" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Afride Mals
+</footer>
+
+<script>
+const reveals=document.querySelectorAll(".reveal");
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target); // animate once
+    }
+  });
+},{threshold:0.15});
+
+reveals.forEach(r=>observer.observe(r));
+</script>
+
+</body>
+</html>
