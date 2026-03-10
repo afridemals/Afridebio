@@ -188,6 +188,133 @@ footer{
 
 <body>
 
+<!-- PORTFOLIO ARROW - একদম উপরে, <body> tag এর পরেই বসাও -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+.arrow-link-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0px;
+  text-decoration:none;
+  cursor:pointer;
+  width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:999;
+  padding:6px 0 4px 0;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+}
+
+.arrow-top-text{
+  font-family:'Poppins',sans-serif;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  background:linear-gradient(90deg,#3a86ff,#ff9f1c);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  opacity:0;
+  animation:arrowLabelIn 1s ease .3s forwards;
+  margin-bottom:5px;
+}
+
+@keyframes arrowLabelIn{
+  from{opacity:0;transform:translateY(-8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.arrow-bar{
+  display:flex;
+  align-items:stretch;
+  width:96%;
+  height:30px;
+  position:relative;
+}
+
+.seg{
+  flex:1;
+  height:100%;
+  clip-path:polygon(0 0,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,0 100%,10px 50%);
+  animation:segIn .5s ease both;
+  transition:filter .3s;
+}
+.seg:first-child{
+  clip-path:polygon(0 0,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,0 100%);
+  border-radius:5px 0 0 5px;
+}
+.seg:last-child{
+  clip-path:polygon(0 0,calc(100% - 4px) 0,calc(100% + 10px) 50%,calc(100% - 4px) 100%,0 100%,10px 50%);
+}
+
+.seg:nth-child(1){background:#3a86ff;animation-delay:.05s}
+.seg:nth-child(2){background:#5096ff;animation-delay:.10s}
+.seg:nth-child(3){background:#6daaff;animation-delay:.15s}
+.seg:nth-child(4){background:#a8c8e8;animation-delay:.20s}
+.seg:nth-child(5){background:#d4a860;animation-delay:.25s}
+.seg:nth-child(6){background:#f09030;animation-delay:.30s}
+.seg:nth-child(7){background:#ff9f1c;animation-delay:.35s}
+
+@keyframes segIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+.arrow-link-wrap:hover .seg{filter:brightness(1.2)}
+
+.travel-dot{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:7px;height:7px;
+  background:#fff;
+  border-radius:50%;
+  box-shadow:0 0 10px 3px rgba(255,255,255,.8);
+  pointer-events:none;
+  animation:dotTravel 2s ease-in-out infinite;
+}
+
+@keyframes dotTravel{
+  0%  {left:1%;opacity:0}
+  8%  {opacity:1}
+  92% {opacity:1}
+  100%{left:95%;opacity:0}
+}
+
+.arrow-shimmer{
+  width:96%;
+  height:1.5px;
+  background:linear-gradient(90deg,transparent,#3a86ff 30%,#ff9f1c 70%,transparent);
+  animation:shimmerPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes shimmerPulse{
+  0%,100%{opacity:.3}
+  50%{opacity:.7}
+}
+</style>
+
+<a href="https://afridemals.github.io/AfrideBiography/" target="_blank" rel="noopener" class="arrow-link-wrap">
+  <span class="arrow-top-text">Personal Portfolio 2.0</span>
+  <div class="arrow-bar">
+    <div class="seg"></div>
+    <div class="seg"></div>
+    <div class="seg"></div>
+    <div class="seg"></div>
+    <div class="seg"></div>
+    <div class="seg"></div>
+    <div class="seg"></div>
+    <div class="travel-dot"></div>
+  </div>
+  <div class="arrow-shimmer"></div>
+</a>
+
 <div class="bg">
   <div class="shape s1"></div>
   <div class="shape s2"></div>
